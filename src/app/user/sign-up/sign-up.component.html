@@ -1,0 +1,62 @@
+
+<div class="container-fluid">
+    <div class="row">
+      <button [routerLink]="['/signin']">signin</button>
+            <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+    
+        </div>
+        <div class="col-md-4 form">
+            <form #createform="ngForm" class="cards">
+               
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">firstName</label>
+                    <input type="email" class="form-control" id="inputfirstname" name="firsname" [(ngModel)]="firstName" #firstnamefield="ngModel" placeholder="firstname" required>
+                    <div class="alert alert-danger" [hidden]="firstnamefield.valid || firstnamefield.pristine">please fill the firstname field</div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">lastName</label>
+                    <input type="text" class="form-control" id="inputlastname"  name="lastName" [(ngModel)]="lastName" placeholder="lastname" #lastnamefield="ngModel" required>
+                    <div class="alert alert-danger" [hidden]="lastnamefield.valid || lastnamefield.pristine">please fill the lastname field</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress">Email</label>
+                  <input type="text" class="form-control" id="inputemail"  name="email" [(ngModel)]="email" placeholder="Email" #emailfield="ngModel" required>
+                  <div class="alert alert-danger" [hidden]="emailfield.valid || emailfield.pristine">please fill the email field</div>
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress2">Password</label>
+                  <input type="password" class="form-control" id="inputpassword"  name="password" [(ngModel)]="password" placeholder="password" #passwordfield="ngModel" required>
+                  <div class="alert alert-danger" [hidden]="passwordfield.valid || passwordfield.pristine">please fill the password field</div>
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress">country code</label>
+                  <input type="number" class="form-control" id="inputcountrycode"  name="country code" [(ngModel)]="countryCode" placeholder="country Code" #countrycodefield="ngModel"required>
+                  <div class="alert alert-danger" [hidden]="countrycodefield.valid || countrycodefield.pristine">please fill the countrycode field</div>
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress">mobile Number</label>
+                  <input type="number" class="form-control" id="inputmobilenumber"  name="mobile number" [(ngModel)]="mobileNumber" placeholder="mobile Number" #mobilenumberfield="ngModel" required>
+                
+                  <div class="alert alert-danger" [hidden]="mobilenumberfield.valid || mobilenumberfield.pristine">please fill the mobilenumber field</div>
+                </div>
+                <p class="loader" *ngIf="signuploader==false"></p>
+                <button type="submit" (click)="signup()"  [disabled]="!createform.valid" class="btn btn-secondary">Signup</button>
+                
+              </form>
+        </div>
+    
+        <div class="col-md-4">
+         
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+ 
+  
